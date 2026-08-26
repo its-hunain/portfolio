@@ -176,6 +176,7 @@ export const experience: Experience[] = [
 export type Project = {
   slug: string;
   name: string;
+  type: "game" | "software";
   category: string;
   period: string;
   description: string;
@@ -196,6 +197,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "taher-menu-system",
+    type: "software",
     name: "Taher Menu System",
     category: "Web / Backend",
     period: "Eike Consulting",
@@ -219,6 +221,7 @@ export const projects: Project[] = [
   },
   {
     slug: "psymark",
+    type: "software",
     name: "Psymark",
     category: "iPad App",
     period: "Eike Consulting",
@@ -242,6 +245,7 @@ export const projects: Project[] = [
   },
   {
     slug: "little-steps",
+    type: "software",
     name: "Little Steps",
     category: "Mobile App",
     period: "Eike Consulting",
@@ -265,6 +269,7 @@ export const projects: Project[] = [
   },
   {
     slug: "readerbee",
+    type: "game",
     name: "ReaderBee — Story Tree",
     category: "Mobile / Education / Game",
     period: "September 2024 – Present",
@@ -288,6 +293,7 @@ export const projects: Project[] = [
   },
   {
     slug: "bloomrate",
+    type: "software",
     name: "BloomRate",
     category: "Mobile / Social",
     period: "Freelance, 2025",
@@ -311,6 +317,7 @@ export const projects: Project[] = [
   },
   {
     slug: "sticker-sync",
+    type: "software",
     name: "Sticker Sync",
     category: "Mobile / Social",
     period: "Freelance, 2025",
@@ -333,6 +340,7 @@ export const projects: Project[] = [
   },
   {
     slug: "capicu",
+    type: "game",
     name: "Capicú",
     category: "Mobile / Multiplayer",
     period: "Freelance, 2025",
@@ -356,6 +364,7 @@ export const projects: Project[] = [
   },
   {
     slug: "battlepillars",
+    type: "game",
     name: "Battlepillars",
     category: "Mobile / Multiplayer / Strategy",
     period: "Freelance, 2025",
@@ -378,6 +387,7 @@ export const projects: Project[] = [
   },
   {
     slug: "big-bluff-central-poker",
+    type: "game",
     name: "Big Bluff Central Poker",
     category: "Multiplayer / Mobile",
     period: "June 2024 – September 2024",
@@ -387,6 +397,7 @@ export const projects: Project[] = [
   },
   {
     slug: "boss-of-the-world",
+    type: "game",
     name: "Boss of the World",
     category: "Mobile / Game",
     period: "September 2023 – June 2024 · Cubix",
@@ -397,6 +408,7 @@ export const projects: Project[] = [
   },
   {
     slug: "domino-earning-world",
+    type: "game",
     name: "Domino Earning World / DEW",
     category: "Multiplayer / Web3",
     period: "March 2023 – August 2023 · Cubix",
@@ -407,6 +419,7 @@ export const projects: Project[] = [
   },
   {
     slug: "lady-luck",
+    type: "game",
     name: "Lady Luck",
     category: "Multiplayer / Card Game",
     period: "Cubix",
@@ -417,6 +430,7 @@ export const projects: Project[] = [
   },
   {
     slug: "hpl-bingo",
+    type: "game",
     name: "HPL Bingo",
     category: "Multiplayer / Web3",
     period: "Cubix",
@@ -427,6 +441,7 @@ export const projects: Project[] = [
   },
   {
     slug: "forest-fusion",
+    type: "game",
     name: "Forest Fusion",
     category: "Mobile / Puzzle",
     period: "Cubix",
@@ -438,6 +453,7 @@ export const projects: Project[] = [
   },
   {
     slug: "wagmi",
+    type: "game",
     name: "Wagmi",
     category: "Multiplayer / Web3",
     period: "Cubix",
@@ -448,6 +464,7 @@ export const projects: Project[] = [
   },
   {
     slug: "second-world",
+    type: "game",
     name: "Second World",
     category: "Mobile / Web3",
     period: "Cubix",
@@ -458,6 +475,7 @@ export const projects: Project[] = [
   },
   {
     slug: "taunt-battle",
+    type: "game",
     name: "Taunt Battle",
     category: "Mobile / Web3",
     period: "Cubix",
@@ -468,6 +486,7 @@ export const projects: Project[] = [
   },
   {
     slug: "track9",
+    type: "game",
     name: "Track9",
     category: "Mobile / Web3",
     period: "Cubix",
@@ -479,6 +498,7 @@ export const projects: Project[] = [
   },
   {
     slug: "micropets",
+    type: "game",
     name: "Micropets",
     category: "Mobile / Web3",
     period: "Cubix",
@@ -489,6 +509,7 @@ export const projects: Project[] = [
   },
   {
     slug: "dragon-zoom",
+    type: "game",
     name: "Dragon Zoom",
     category: "Mobile / Game",
     period: "Cubix",
@@ -499,6 +520,7 @@ export const projects: Project[] = [
   },
   {
     slug: "likeman",
+    type: "game",
     name: "Likeman",
     category: "Mobile / Game",
     period: "Cubix",
@@ -509,6 +531,7 @@ export const projects: Project[] = [
   },
   {
     slug: "time-forge",
+    type: "game",
     name: "Time Forge",
     category: "Mobile / Game",
     period: "Cubix",
@@ -519,6 +542,7 @@ export const projects: Project[] = [
   },
   {
     slug: "bright-farm",
+    type: "game",
     name: "Bright Farm",
     category: "Mobile / Game",
     period: "Cubix",
@@ -529,6 +553,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cloud-of-venus",
+    type: "game",
     name: "Cloud of Venus",
     category: "Mobile / Game",
     period: "Cubix",
@@ -539,6 +564,7 @@ export const projects: Project[] = [
   },
   {
     slug: "hoops-by-tissot",
+    type: "software",
     name: "Hoops by Tissot",
     category: "Mobile / Sports",
     period: "Cubix",
@@ -549,6 +575,7 @@ export const projects: Project[] = [
   },
   {
     slug: "space-pirates",
+    type: "game",
     name: "Space Pirates",
     category: "Mobile / Game",
     period: "Cubix",
@@ -559,6 +586,7 @@ export const projects: Project[] = [
   },
   {
     slug: "relentless",
+    type: "game",
     name: "Relentless",
     category: "Mobile / Game",
     period: "Cubix",
@@ -569,6 +597,7 @@ export const projects: Project[] = [
   },
   {
     slug: "finding-frez",
+    type: "game",
     name: "Finding Frez",
     category: "Mobile / Puzzle",
     period: "Cubix",
@@ -579,6 +608,7 @@ export const projects: Project[] = [
   },
   {
     slug: "dent-and-buckle",
+    type: "software",
     name: "Dent & Buckle",
     category: "3D / Simulation / iPad App",
     period: "The Location Lab",
