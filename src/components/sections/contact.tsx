@@ -1,6 +1,7 @@
 import { person } from "@/lib/content";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { LinkedInIcon } from "@/components/social-icon";
 
 export function Contact() {
   return (
@@ -31,8 +32,9 @@ export function Contact() {
               href={person.links.linkedin}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent hover:text-accent"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-7 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent hover:text-accent"
             >
+              <LinkedInIcon className="h-4 w-4" />
               Connect on LinkedIn
             </a>
           </div>

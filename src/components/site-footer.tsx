@@ -1,4 +1,5 @@
 import { person } from "@/lib/content";
+import { EmailIcon, PhoneIcon, LinkedInIcon, GitHubIcon, StackOverflowIcon } from "@/components/social-icon";
 
 export function SiteFooter() {
   return (
@@ -9,38 +10,46 @@ export function SiteFooter() {
           <p className="mt-1 text-sm text-muted">{person.title} · {person.location}</p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-6 text-sm text-muted">
-          <a href={`mailto:${person.email}`} className="transition-colors hover:text-accent">
+        <div className="flex flex-nowrap items-center gap-3 overflow-x-auto text-sm text-muted md:gap-5">
+          <a
+            href={`mailto:${person.email}`}
+            className="flex shrink-0 items-center gap-1.5 whitespace-nowrap transition-colors hover:text-accent"
+          >
+            <EmailIcon className="h-4 w-4" />
             Email
           </a>
           <a
             href={`tel:${person.phone.replace(/\s+/g, "")}`}
-            className="transition-colors hover:text-accent"
+            className="flex shrink-0 items-center gap-1.5 whitespace-nowrap transition-colors hover:text-accent"
           >
+            <PhoneIcon className="h-4 w-4" />
             Phone
           </a>
           <a
             href={person.links.linkedin}
             target="_blank"
             rel="noreferrer noopener"
-            className="transition-colors hover:text-accent"
+            className="flex shrink-0 items-center gap-1.5 whitespace-nowrap transition-colors hover:text-accent"
           >
+            <LinkedInIcon className="h-4 w-4" />
             LinkedIn
           </a>
           <a
             href={person.links.github}
             target="_blank"
             rel="noreferrer noopener"
-            className="transition-colors hover:text-accent"
+            className="flex shrink-0 items-center gap-1.5 whitespace-nowrap transition-colors hover:text-accent"
           >
+            <GitHubIcon className="h-4 w-4" />
             GitHub
           </a>
           <a
             href={person.links.stackoverflow}
             target="_blank"
             rel="noreferrer noopener"
-            className="transition-colors hover:text-accent"
+            className="flex shrink-0 items-center gap-1.5 whitespace-nowrap transition-colors hover:text-accent"
           >
+            <StackOverflowIcon className="h-4 w-4" />
             Stack Overflow
           </a>
         </div>

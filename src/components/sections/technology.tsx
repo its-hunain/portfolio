@@ -1,6 +1,7 @@
 import { technologySections } from "@/lib/content";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { TechIcon } from "@/components/tech-icon";
 
 export function Technology() {
   return (
@@ -17,8 +18,9 @@ export function Technology() {
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="rounded-full border border-border px-3 py-1.5 text-sm text-muted"
+                  className="flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-sm text-muted"
                 >
+                  <TechIcon name={item} className="h-4 w-4 shrink-0" />
                   {item}
                 </li>
               ))}

@@ -41,7 +41,7 @@ type ProjectVisualProps = {
 export function ProjectVisual({ slug, name, image }: ProjectVisualProps) {
   if (image) {
     return (
-      <div className="relative h-full min-h-[180px] w-full overflow-hidden rounded-xl bg-surface-raised">
+      <div className="relative h-full min-h-0 w-full overflow-hidden rounded-xl bg-surface-raised">
         <Image
           src={image}
           alt={`${name} key art`}
@@ -64,7 +64,7 @@ export function ProjectVisual({ slug, name, image }: ProjectVisualProps) {
 
   return (
     <div
-      className={`relative flex h-full min-h-[180px] w-full items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br ${gradient}`}
+      className={`relative flex h-full min-h-0 w-full items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br ${gradient}`}
       aria-hidden="true"
     >
       <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:22px_22px]" />

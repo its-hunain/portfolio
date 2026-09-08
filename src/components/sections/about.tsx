@@ -1,6 +1,8 @@
 import { aboutCopy, coreExpertise } from "@/lib/content";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { ExpertiseIcon } from "@/components/expertise-icon";
+import { PillIcon } from "@/components/pill-icon";
 
 export function About() {
   return (
@@ -26,13 +28,19 @@ export function About() {
             <div className="mt-6 flex flex-col gap-6">
               {coreExpertise.map((group) => (
                 <div key={group.category}>
-                  <p className="text-sm font-medium text-foreground">{group.category}</p>
+                  <div className="flex items-center gap-2">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-surface-raised text-accent">
+                      <ExpertiseIcon category={group.category} className="h-4 w-4" />
+                    </span>
+                    <p className="text-sm font-medium text-foreground">{group.category}</p>
+                  </div>
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {group.items.map((item) => (
                       <li
                         key={item}
-                        className="rounded-full bg-surface-raised px-3 py-1 text-xs text-muted"
+                        className="flex items-center gap-1.5 rounded-full bg-surface-raised px-3 py-1 text-xs text-muted"
                       >
+                        <PillIcon name={item} className="h-3.5 w-3.5 shrink-0" />
                         {item}
                       </li>
                     ))}

@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const SITE_URL = "https://mohammadhunain83.wixsite.com/portfolio";
+const SITE_URL = "https://hunain.online";
 const TITLE = "Mohammad Hunain | Senior Software Engineer | Mobile, Web & Backend";
 const DESCRIPTION =
   "Senior Software Engineer specializing in mobile, web, backend, game development, multiplayer systems, 3D simulation, and product development.";

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const NAV_LINKS = [
@@ -15,8 +15,43 @@ const NAV_LINKS = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [activeHash, setActiveHash] = useState("");
+  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
   const router = useRouter();
+
+  useEffect(() => {
+    if (pathname !== "/") return;
+
+    const sections = NAV_LINKS.map((link) => document.querySelector(link.href)).filter(
+      (el): el is Element => el !== null
+    );
+
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const maxScroll = doc.scrollHeight - doc.clientHeight;
+      setScrollProgress(maxScroll > 0 ? window.scrollY / maxScroll : 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveHash(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
+  }, [pathname]);
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setOpen(false);
@@ -41,6 +76,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-md">
+      <div className="absolute inset-x-0 bottom-0 h-px bg-border">
+        <div
+          className="h-full bg-accent transition-[width] duration-150"
+          style={{ width: `${scrollProgress * 100}%` }}
+        />
+      </div>
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 md:px-8">
         <Link
           href="/"
@@ -56,7 +97,10 @@ export function SiteHeader() {
               key={link.href}
               href={`/${link.href}`}
               onClick={(e) => handleSectionLinkClick(e, link.href)}
-              className="text-sm text-muted transition-colors hover:text-foreground"
+              aria-current={activeHash === link.href ? "location" : undefined}
+              className={`text-sm transition-colors hover:text-foreground ${
+                activeHash === link.href ? "font-medium text-foreground" : "text-muted"
+              }`}
             >
               {link.label}
             </a>
@@ -64,6 +108,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <a
+            href="/CV.pdf"
+            download
+            className="hidden text-sm font-medium text-muted transition-colors hover:text-foreground md:inline-flex"
+          >
+            Resume
+          </a>
           <a
             href="/#contact"
             onClick={(e) => handleSectionLinkClick(e, "#contact")}
@@ -109,6 +160,16 @@ export function SiteHeader() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href="/CV.pdf"
+                download
+                onClick={() => setOpen(false)}
+                className="block rounded-lg px-2 py-3 text-base text-foreground transition-colors hover:bg-surface-raised"
+              >
+                Resume
+              </a>
+            </li>
             <li>
               <a
                 href="/#contact"

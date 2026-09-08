@@ -26,6 +26,12 @@ export const heroCopy = {
   secondaryCta: { label: "Let's Work Together", href: "#contact" },
 };
 
+export const heroStats = [
+  { value: "8+", label: "Years Experience" },
+  { value: "30+", label: "Projects Shipped" },
+  { value: "6", label: "Domains" },
+];
+
 export const aboutCopy = [
   "I'm a Senior Software Engineer who enjoys turning ideas into real products.",
   "Over the years I've worked across mobile applications, web platforms, backend systems, multiplayer games, 3D simulations, and interactive experiences.",
@@ -34,7 +40,7 @@ export const aboutCopy = [
 ];
 
 export const professionalSummary =
-  "Mohammad Hunain is a Senior Software Engineer with 8+ years of professional experience building software products across mobile, web, backend, and game development. He has worked on production applications, multiplayer and real-time systems, mobile products, APIs, 3D simulations, interactive experiences, and game products across multiple platforms. His experience includes Unity and C#, .NET, TypeScript, React, React Native, Swift, backend development, multiplayer technologies, mobile development, and 3D visualization. He is interested in understanding the problem, defining the right MVP, selecting appropriate technologies, designing scalable solutions, and taking products from concept through production. He has also worked in technical leadership roles, including leading game development teams and driving projects from concept to completion.";
+  "I'm a Senior Software Engineer with 8+ years of professional experience building software products across mobile, web, backend, and game development. I've worked on production applications, multiplayer and real-time systems, mobile products, APIs, 3D simulations, interactive experiences, and game products across multiple platforms. My experience includes Unity and C#, .NET, TypeScript, React, React Native, Swift, backend development, multiplayer technologies, mobile development, and 3D visualization. I'm interested in understanding the problem, defining the right MVP, selecting appropriate technologies, designing scalable solutions, and taking products from concept through production. I've also worked in technical leadership roles, including leading game development teams and driving projects from concept to completion.";
 
 export type EducationItem = {
   school: string;
@@ -202,7 +208,7 @@ export const projects: Project[] = [
     category: "Web / Backend",
     period: "Eike Consulting",
     description:
-      "A digital platform by Taher, Inc. that provides K-12 school, campus, and senior dining menus, nutritional data, and food allergy details. Users access daily food choices online or via the mobile application, while staff manage menu content through a secure admin portal. Mohammad was a full-stack developer on the project, building numerous features across the public-facing menu system and the staff admin portal.",
+      "A digital platform by Taher, Inc. that provides K-12 school, campus, and senior dining menus, nutritional data, and food allergy details. Users access daily food choices online or via the mobile application, while staff manage menu content through a secure admin portal. I was a full-stack developer on the project, building numerous features across the public-facing menu system and the staff admin portal.",
     technologies: ["React", ".NET MVC"],
     url: "https://taher.com/",
     clientLogo: { src: "/projects/site-screenshots/Taher.PNG", alt: "Taher, Inc." },
@@ -226,7 +232,7 @@ export const projects: Project[] = [
     category: "iPad App",
     period: "Eike Consulting",
     description:
-      "Redefines progress monitoring with digital assessment tools for school psychologists, occupational therapists, and educators. Mohammad was the sole developer, building the iOS visual-motor assessment and scoring app in Swift.",
+      "Redefines progress monitoring with digital assessment tools for school psychologists, occupational therapists, and educators. I was the sole developer, building the iOS visual-motor assessment and scoring app in Swift.",
     technologies: ["Swift"],
     url: "https://www.psymark.ai/",
     image: "/projects/site-screenshots/psymark.jpg",
@@ -250,7 +256,7 @@ export const projects: Project[] = [
     category: "Mobile App",
     period: "Eike Consulting",
     description:
-      "An app to inspire each other to take \"little steps today\" for the little joys in life. Mohammad was a Senior Full Stack developer on the project, building both the React Native mobile app and the .NET MVC backend.",
+      "An app to inspire each other to take \"little steps today\" for the little joys in life. I was a Senior Full Stack developer on the project, building both the React Native mobile app and the .NET MVC backend.",
     technologies: ["React Native", ".NET MVC"],
     url: "https://littlesteps.today/",
     image: "/projects/site-screenshots/little-steps.jpg",
@@ -272,10 +278,10 @@ export const projects: Project[] = [
     type: "game",
     name: "ReaderBee — Story Tree",
     category: "Mobile / Education / Game",
-    period: "September 2024 – Present",
+    period: "Eike Consulting",
     description:
-      "An educational storytelling game for children combining interactive reading, playful activities, and engaging animations to support literacy development. Mohammad is the sole developer, building the Unity story and word-game mechanics.",
-    technologies: ["Unity", "C#"],
+      "An educational storytelling game for children combining interactive reading, playful activities, and engaging animations to support literacy development. I'm the sole developer, building the Unity story and word-game mechanics.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://readerbee.com/",
     image: "/projects/site-screenshots/readerbee.jpg",
     caseStudy: {
@@ -296,9 +302,9 @@ export const projects: Project[] = [
     type: "software",
     name: "BloomRate",
     category: "Mobile / Social",
-    period: "Freelance, 2025",
+    period: "Freelance",
     description:
-      "A social app for sharing creativity and connecting without pressure, with posts organized into Thoughts, Videos, and Photos. Mohammad was the sole developer, building both the React Native app and the Node.js backend.",
+      "A social app for sharing creativity and connecting without pressure, with posts organized into Thoughts, Videos, and Photos. I was the sole developer, building both the React Native app and the Node.js backend.",
     technologies: ["React Native", "Node.js"],
     url: "https://bloomrate.com/",
     image: "/projects/site-screenshots/BloomrateNew.PNG",
@@ -320,9 +326,9 @@ export const projects: Project[] = [
     type: "software",
     name: "Sticker Sync",
     category: "Mobile / Social",
-    period: "Freelance, 2025",
+    period: "Freelance",
     description:
-      "An unofficial companion app for the mobile game Monopoly GO! that helps players trade and share in-game stickers, replacing scattered trading chats on platforms like Discord and Facebook with one organized feed. Mohammad was the sole developer, building both the React Native app and the Node.js backend.",
+      "An unofficial companion app for the mobile game Monopoly GO! that helps players trade and share in-game stickers, replacing scattered trading chats on platforms like Discord and Facebook with one organized feed. I was the sole developer, building both the React Native app and the Node.js backend.",
     technologies: ["React Native", "Node.js"],
     image: "/projects/site-screenshots/StickerSync.PNG",
     caseStudy: {
@@ -343,9 +349,9 @@ export const projects: Project[] = [
     type: "game",
     name: "Capicú",
     category: "Mobile / Multiplayer",
-    period: "Freelance, 2025",
+    period: "Freelance",
     description:
-      "A multiplayer domino game bringing the classic game to mobile with multiple rule variants, including Blocking, Capicú, and Nines. Mohammad was the sole developer, building the Unity/C# client and the real-time multiplayer backend on Nakama.",
+      "A multiplayer domino game bringing the classic game to mobile with multiple rule variants, including Blocking, Capicú, and Nines. I was the sole developer, building the Unity/C# client and the real-time multiplayer backend on Nakama.",
     technologies: ["Unity", "C#", "Nakama", "TypeScript"],
     url: "https://capicu.games/",
     image: "/projects/site-screenshots/Capicu.PNG",
@@ -367,9 +373,9 @@ export const projects: Project[] = [
     type: "game",
     name: "Battlepillars",
     category: "Mobile / Multiplayer / Strategy",
-    period: "Freelance, 2025",
+    period: "Freelance",
     description:
-      "A real-time tug-of-war strategy game where players command customizable, weaponized caterpillar units against opponents, with both a single-player campaign and real-time online multiplayer. Mohammad worked on the project as a freelance developer using Unity and C#.",
+      "A real-time tug-of-war strategy game where players command customizable, weaponized caterpillar units against opponents, with both a single-player campaign and real-time online multiplayer. I worked on the project as a freelance developer using Unity and C#.",
     technologies: ["Unity", "C#"],
     image: "/projects/site-screenshots/battlePillar.jpg",
     caseStudy: {
@@ -390,9 +396,10 @@ export const projects: Project[] = [
     type: "game",
     name: "Big Bluff Central Poker",
     category: "Multiplayer / Mobile",
-    period: "June 2024 – September 2024",
+    period: "Freelance",
     description:
       "A free mobile social card-gaming application designed for poker enthusiasts who enjoy playing with friends or poker groups.",
+    technologies: ["Unity", "C#", "TypeScript"],
     image: "/projects/site-screenshots/BigBluff.jpg",
   },
   {
@@ -400,9 +407,10 @@ export const projects: Project[] = [
     type: "game",
     name: "Boss of the World",
     category: "Mobile / Game",
-    period: "September 2023 – June 2024 · Cubix",
+    period: "Cubix",
     description:
       "A realistic all-star cheerleading mobile game focused on building a dream all-star gym, managing athletes, creating choreography, and producing music for performances.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://cheerbossoftheworld.com",
     image: "/projects/cubix/boss-of-the-world.webp",
   },
@@ -411,9 +419,10 @@ export const projects: Project[] = [
     type: "game",
     name: "Domino Earning World / DEW",
     category: "Multiplayer / Web3",
-    period: "March 2023 – August 2023 · Cubix",
+    period: "Cubix",
     description:
       "A blockchain-based multiplayer domino game platform combining multiplayer gameplay with a global social/community experience.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/domino-earning-world/",
     image: "/projects/cubix/domino-earning-world.webp",
   },
@@ -425,6 +434,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A competitive multiplayer card game featuring real-time matchmaking, quick duels, rewards, and engaging casino-style mobile gameplay.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/lady-luck-multiplayer-card-game-mobile-battles/",
     image: "/projects/cubix/lady-luck.webp",
   },
@@ -436,6 +446,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A multiplayer bingo game combining strategic gameplay, competitive tournaments, and Web3 rewards for deeper player engagement.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/hpl-bingo-multiplayer-web3-game-by-cubix/",
     image: "/projects/cubix/hpl-bingo.webp",
   },
@@ -447,7 +458,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A Unity-powered merge-3 puzzle game where players restore an enchanted forest, unlock mystical creatures, and complete magical quests.",
-    technologies: ["Unity"],
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/unity-based-merge-3-puzzle-adventure-game/",
     image: "/projects/cubix/forest-fusion.webp",
   },
@@ -459,6 +470,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A multiplayer play-to-earn tower defense strategy game with in-game NFT assets.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/wagmi/",
     image: "/projects/cubix/wagmi.webp",
   },
@@ -470,6 +482,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A 3D NFT-based city-building game with PvP strategy, sending players into a world of combat encounters.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/second-world-case-study/",
     image: "/projects/cubix/second-world.webp",
   },
@@ -481,6 +494,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "An NFT-based strategic simulation game combining combat strategy with an engage-to-earn model.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/taunt-battle/",
     image: "/projects/cubix/taunt-battle.webp",
   },
@@ -492,7 +506,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A Unity-based play-to-earn dog racing game with crypto assets and competitive rewards.",
-    technologies: ["Unity"],
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/track9/",
     image: "/projects/cubix/track9.webp",
   },
@@ -504,6 +518,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A play-to-earn NFT game where players collect and engage with virtual pets, completing challenges to earn rewards.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/micro-pets/",
     image: "/projects/cubix/micropets.webp",
   },
@@ -515,6 +530,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "An Asian-inspired dragon game for iOS with interactive challenges and collectables.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/dragon-zoom/",
     image: "/projects/cubix/dragon-zoom.webp",
   },
@@ -526,6 +542,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A Pacman-inspired maze game where players compete in maze-based levels while networking.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/likeman/",
     image: "/projects/cubix/likeman.webp",
   },
@@ -537,6 +554,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "An RPG-style shooting game built for strategy fans, featuring intense battles and rewards.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/time-forge/",
     image: "/projects/cubix/time-forge.webp",
   },
@@ -548,6 +566,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A farm-adventure and mystery roleplay game where players solve a mystery while tending to their farm.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/bright-farm/",
     image: "/projects/cubix/bright-farm.webp",
   },
@@ -559,6 +578,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A space-exploration RPG built for strategy fans.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/cloud-of-venus/",
     image: "/projects/cubix/cloud-of-venus.webp",
   },
@@ -581,6 +601,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A space RPG adventure game built for strategy fans.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/space-pirates/",
     image: "/projects/cubix/space-pirates.webp",
   },
@@ -592,6 +613,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "An action-adventure game combining strategic gameplay with a compelling narrative for intense combat fans.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/relentless/",
     image: "/projects/cubix/relentless.webp",
   },
@@ -603,6 +625,7 @@ export const projects: Project[] = [
     period: "Cubix",
     description:
       "A puzzle-adventure game combining engaging gameplay with educational challenges.",
+    technologies: ["Unity", "C#", "TypeScript"],
     url: "https://www.cubix.co/work/finding-frez/",
     image: "/projects/cubix/finding-frez.webp",
   },
@@ -613,7 +636,7 @@ export const projects: Project[] = [
     category: "3D / Simulation / iPad App",
     period: "The Location Lab",
     description:
-      "A digital defect management platform for the aviation industry. Replaces traditional 2D diagrams with interactive 3D aircraft models, letting maintenance teams record and track structural defects (dents, buckles) directly on-model from an iPad, with reporting built for lease returns and MRO workflows. This was Mohammad's first 3D simulation project.",
+      "A digital defect management platform for the aviation industry. Replaces traditional 2D diagrams with interactive 3D aircraft models, letting maintenance teams record and track structural defects (dents, buckles) directly on-model from an iPad, with reporting built for lease returns and MRO workflows. This was my first 3D simulation project.",
     technologies: ["Unity", "C#", "3D Simulation"],
     image: "/projects/site-screenshots/dent-and-buckle.jpg",
     url: "https://dentandbuckle.com/",
@@ -633,7 +656,7 @@ export const projects: Project[] = [
 ];
 
 export const projectsDisclaimer =
-  "The projects shown on the portfolio are selected examples of Mohammad's work. They are not a complete list of every product or project he has contributed to.";
+  "The projects shown on the portfolio are selected examples of my work. They are not a complete list of every product or project I have contributed to.";
 
 export type ProcessStep = {
   number: string;

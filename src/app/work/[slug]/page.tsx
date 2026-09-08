@@ -34,10 +34,25 @@ export default async function ProjectPage({ params }: Props) {
 
   const cs = project.caseStudy;
 
+  const caseStudySteps = cs
+    ? [
+        { title: "Overview", body: cs.overview },
+        cs.challenge ? { title: "The Challenge", body: cs.challenge } : null,
+        cs.role ? { title: "My Role", body: cs.role } : null,
+        cs.technicalApproach ? { title: "Technical Approach", body: cs.technicalApproach } : null,
+      ].filter((step): step is { title: string; body: string } => step !== null)
+    : [];
+
   return (
     <Section className="py-16 md:py-24">
-      <Link href="/#work" className="text-sm font-medium text-muted transition-colors hover:text-accent">
-        ← Back to Work
+      <Link
+        href="/#work"
+        className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M14 5l-7 7 7 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        Back to Work
       </Link>
 
       <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-[1fr_1.3fr] md:items-start">
@@ -80,43 +95,49 @@ export default async function ProjectPage({ params }: Props) {
             </a>
           ) : null}
 
-          {cs ? (
-            <div className="mt-10 flex flex-col gap-8 border-t border-border pt-10">
-              <CaseStudyBlock title="Overview" body={cs.overview} />
-              {cs.challenge ? <CaseStudyBlock title="The Challenge" body={cs.challenge} /> : null}
-              {cs.role ? <CaseStudyBlock title="My Role" body={cs.role} /> : null}
-              {cs.technicalApproach ? (
-                <CaseStudyBlock title="Technical Approach" body={cs.technicalApproach} />
-              ) : null}
-              {cs.keyContributions ? (
-                <div>
-                  <h2 className="font-display text-lg font-semibold text-foreground">
-                    Key Contributions
-                  </h2>
-                  <ul className="mt-3 flex flex-col gap-2">
-                    {cs.keyContributions.map((point) => (
-                      <li key={point} className="flex gap-2 text-sm leading-relaxed text-muted">
-                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
+          {caseStudySteps.length > 0 ? (
+            <div className="mt-12 flex flex-col gap-10 border-t border-border pt-10">
+              {caseStudySteps.map((step, i) => (
+                <div key={step.title} className="flex gap-4">
+                  <div className="flex flex-col items-center">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 font-mono text-xs font-semibold text-accent">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    {i < caseStudySteps.length - 1 ? (
+                      <span className="mt-2 w-px flex-1 bg-border" aria-hidden="true" />
+                    ) : null}
+                  </div>
+                  <div className="pb-2">
+                    <h2 className="font-display text-lg font-semibold text-foreground">{step.title}</h2>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
+                  </div>
                 </div>
-              ) : null}
-              {cs.outcome ? <CaseStudyBlock title="Outcome" body={cs.outcome} /> : null}
+              ))}
+            </div>
+          ) : null}
+
+          {cs?.keyContributions ? (
+            <div className="mt-10">
+              <h2 className="font-display text-lg font-semibold text-foreground">Key Contributions</h2>
+              <ul className="mt-3 flex flex-col gap-2">
+                {cs.keyContributions.map((point) => (
+                  <li key={point} className="flex gap-2 text-sm leading-relaxed text-muted">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
+          {cs?.outcome ? (
+            <div className="mt-10 rounded-2xl border border-accent/30 bg-accent/5 p-6">
+              <p className="font-mono text-xs uppercase tracking-[0.15em] text-accent">Outcome</p>
+              <p className="mt-2 text-base leading-relaxed text-foreground">{cs.outcome}</p>
             </div>
           ) : null}
         </div>
       </div>
     </Section>
-  );
-}
-
-function CaseStudyBlock({ title, body }: { title: string; body: string }) {
-  return (
-    <div>
-      <h2 className="font-display text-lg font-semibold text-foreground">{title}</h2>
-      <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
-    </div>
   );
 }

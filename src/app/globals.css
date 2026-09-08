@@ -98,6 +98,15 @@ body {
   }
 }
 
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
