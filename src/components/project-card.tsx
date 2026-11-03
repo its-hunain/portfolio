@@ -6,11 +6,11 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <article
       data-carousel-item
-      className="group flex h-[390px] w-[200px] shrink-0 flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent/60 sm:w-[240px]"
+      className="group flex h-[414px] w-[200px] shrink-0 flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent/60 sm:w-[240px]"
       style={{ scrollSnapAlign: "start" }}
     >
-      <div className="h-[140px] p-2">
-        <ProjectVisual slug={project.slug} name={project.name} image={project.image} />
+      <div className="h-[140px] shrink-0 p-2">
+        <ProjectVisual slug={project.slug} name={project.name} image={project.image} imageFit={project.imageFit} />
       </div>
 
       <div className="flex flex-1 flex-col gap-3 px-4 pb-4 pt-1">

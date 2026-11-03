@@ -19,9 +19,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const SITE_URL = "https://hunain.online";
-const TITLE = "Mohammad Hunain | Senior Software Engineer | Mobile, Web & Backend";
+const TITLE = "Mohammad Hunain | Full Stack Developer | Mobile, Web & Backend";
 const DESCRIPTION =
-  "Senior Software Engineer specializing in mobile, web, backend, game development, multiplayer systems, 3D simulation, and product development.";
+  "Full Stack Developer specializing in mobile, web, backend, game development, multiplayer systems, 3D simulation, and product development.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   description: DESCRIPTION,
   keywords: [
-    "Senior Software Engineer",
+    "Full Stack Developer",
     "Software Engineer Pakistan",
     "Mobile App Developer",
     "iOS Developer",

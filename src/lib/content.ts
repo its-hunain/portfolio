@@ -4,8 +4,8 @@
 
 export const person = {
   name: "Mohammad Hunain",
-  title: "Senior Software Engineer",
-  headline: "Senior Software Engineer | Mobile, Web, Backend & Game Development",
+  title: "Full Stack Developer",
+  headline: "Full Stack Developer | Mobile, Web, Backend & Game Development",
   location: "Karachi, Pakistan",
   email: "mohammadhunain83@gmail.com",
   phone: "+92 315 832 7536",
@@ -33,14 +33,14 @@ export const heroStats = [
 ];
 
 export const aboutCopy = [
-  "I'm a Senior Software Engineer who enjoys turning ideas into real products.",
+  "I'm a Full Stack Developer who enjoys turning ideas into real products.",
   "Over the years I've worked across mobile applications, web platforms, backend systems, multiplayer games, 3D simulations, and interactive experiences.",
   "My background in game development taught me how to think deeply about performance, real-time systems, user experience, and complex technical problems. My broader software engineering experience allows me to apply those skills to products beyond gaming.",
   "I enjoy working from the early stages of a product — understanding the problem, shaping the MVP, choosing the right architecture, and building something that can actually scale.",
 ];
 
 export const professionalSummary =
-  "I'm a Senior Software Engineer with 8+ years of professional experience building software products across mobile, web, backend, and game development. I've worked on production applications, multiplayer and real-time systems, mobile products, APIs, 3D simulations, interactive experiences, and game products across multiple platforms. My experience includes Unity and C#, .NET, TypeScript, React, React Native, Swift, backend development, multiplayer technologies, mobile development, and 3D visualization. I'm interested in understanding the problem, defining the right MVP, selecting appropriate technologies, designing scalable solutions, and taking products from concept through production. I've also worked in technical leadership roles, including leading game development teams and driving projects from concept to completion.";
+  "I'm a Full Stack Developer with 8+ years of professional experience building software products across mobile, web, backend, and game development. I've worked on production applications, multiplayer and real-time systems, mobile products, APIs, 3D simulations, interactive experiences, and game products across multiple platforms. My experience includes Unity and C#, .NET, TypeScript, React, React Native, Swift, backend development, multiplayer technologies, mobile development, and 3D visualization. I'm interested in understanding the problem, defining the right MVP, selecting appropriate technologies, designing scalable solutions, and taking products from concept through production. I've also worked in technical leadership roles, including leading game development teams and driving projects from concept to completion.";
 
 export type EducationItem = {
   school: string;
@@ -189,6 +189,8 @@ export type Project = {
   technologies?: string[];
   url?: string;
   image?: string;
+  imageFit?: "cover" | "contain";
+  socialLinks?: { label: string; url: string }[];
   clientLogo?: { src: string; alt: string };
   caseStudy?: {
     overview: string;
@@ -211,6 +213,7 @@ export const projects: Project[] = [
       "A digital platform by Taher, Inc. that provides K-12 school, campus, and senior dining menus, nutritional data, and food allergy details. Users access daily food choices online or via the mobile application, while staff manage menu content through a secure admin portal. I was a full-stack developer on the project, building numerous features across the public-facing menu system and the staff admin portal.",
     technologies: ["React", ".NET MVC"],
     url: "https://taher.com/",
+    image: "/projects/site-screenshots/TMH.PNG",
     clientLogo: { src: "/projects/site-screenshots/Taher.PNG", alt: "Taher, Inc." },
     caseStudy: {
       overview:
@@ -319,6 +322,48 @@ export const projects: Project[] = [
         "Built a social feed spanning multiple content types (Thoughts, Videos, Photos) with reactions, comments, and share/impression tracking on posts, backed by a custom Node.js API built alongside the app.",
       outcome:
         "Built in 2025, still active and live on app stores today.",
+    },
+  },
+  {
+    slug: "yallabae",
+    type: "software",
+    name: "Yallabae",
+    category: "Mobile / Marketplace",
+    period: "Freelance",
+    description:
+      "The customer mobile app for the Yallabae marketplace, letting shoppers browse products by category, brand, and store, grab deals, manage a wishlist and cart, check out, and track orders, returns, and reviews. I'm building the React Native (Expo) app on a Supabase backend.",
+    technologies: ["React Native", "Expo", "TypeScript", "Supabase"],
+    caseStudy: {
+      overview:
+        "Yallabae is an online marketplace, and this is its customer mobile app: shoppers browse products by category, brand, and seller storefront, catch flash deals and promotions, keep a wishlist and cart, check out, and manage their orders, returns, and product reviews.",
+      role:
+        "Sole developer of the customer mobile app, building it in React Native (Expo) on the marketplace's Supabase backend, as a freelance engagement.",
+      technicalApproach:
+        "Built with Expo Router file-based navigation split into auth and customer flows, with data-fetching hooks over Supabase for catalog, search, cart, orders, returns, and reviews, and Supabase Storage for photo uploads on profiles and return requests. The app supports English and Arabic with full right-to-left layout, voice search, and an optional Face ID / fingerprint app lock. Sentry handles error monitoring, and GitHub Actions run lint and type checks on every change and trigger EAS builds for staging and production releases.",
+    },
+    url: "https://yallabae.com/",
+    socialLinks: [
+      { label: "Facebook", url: "https://www.facebook.com/people/YallaBae/61580444256364/" },
+      { label: "TikTok", url: "https://www.tiktok.com/@yallabaeofficial" },
+      { label: "LinkedIn", url: "https://www.linkedin.com/company/yallabae/" },
+    ],
+    image: "/projects/site-screenshots/yallabae_cover.jpg",
+  },
+  {
+    slug: "legible",
+    type: "software",
+    name: "Legible",
+    category: "Mobile / Civic",
+    period: "Freelance",
+    description:
+      "A civic-engagement app that helps people in the US follow their government: explore and search bills, learn their rights, track national finances, and look up representatives across the executive branch, House, and Senate, with bookmarks, notifications, and a subscription. I was the sole developer, building the React Native app and the Node.js backend, and delivered it to the client.",
+    technologies: ["React Native", "Node.js"],
+    image: "/projects/site-screenshots/legible_cover.jpg",
+    caseStudy: {
+      overview:
+        "Legible is a civic-engagement mobile app built around the idea of \"power to the people\": it helps people in the US follow their government by exploring and searching bills, learning their rights, tracking national finances, and looking up representatives across the executive branch, the House, and the Senate, with personalization, bookmarks, notifications, and a subscription.",
+      role:
+        "Sole developer on the project, building both the React Native mobile app and the Node.js backend, as a freelance engagement, and delivering the finished app to the client.",
     },
   },
   {

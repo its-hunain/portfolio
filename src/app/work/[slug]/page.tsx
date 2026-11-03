@@ -56,8 +56,8 @@ export default async function ProjectPage({ params }: Props) {
       </Link>
 
       <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-[1fr_1.3fr] md:items-start">
-        <div className="md:sticky md:top-24">
-          <ProjectVisual slug={project.slug} name={project.name} image={project.image} />
+        <div className="aspect-[16/10] w-full md:sticky md:top-24">
+          <ProjectVisual slug={project.slug} name={project.name} image={project.image} imageFit={project.imageFit} />
         </div>
 
         <div>
@@ -93,6 +93,23 @@ export default async function ProjectPage({ params }: Props) {
             >
               Visit Live Site ↗
             </a>
+          ) : null}
+
+          {project.socialLinks?.length ? (
+            <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              {project.socialLinks.map((link) => (
+                <li key={link.url}>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-muted transition-colors hover:text-accent"
+                  >
+                    {link.label} ↗
+                  </a>
+                </li>
+              ))}
+            </ul>
           ) : null}
 
           {caseStudySteps.length > 0 ? (

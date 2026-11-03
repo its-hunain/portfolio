@@ -15,7 +15,7 @@ export function FeaturedWork() {
         <SectionHeading
           eyebrow="Selected Work"
           title="Featured Work"
-          description="A sample of products across mobile, multiplayer, and interactive experiences."
+          description="A selection of web platforms, mobile apps, 3D simulation, and games I've worked on."
         />
       </Reveal>
 

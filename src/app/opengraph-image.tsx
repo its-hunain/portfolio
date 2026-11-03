@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { person, heroCopy } from "@/lib/content";
 
 export const runtime = "nodejs";
-export const alt = "Mohammad Hunain — Senior Software Engineer";
+export const alt = "Mohammad Hunain — Full Stack Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

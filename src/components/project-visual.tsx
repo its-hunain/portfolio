@@ -6,6 +6,7 @@ const GRADIENTS: Record<string, string> = {
   "little-steps": "from-[#e0a563] via-[#c97f4a] to-[#5c331a]",
   readerbee: "from-[#e08a63] via-[#d97757] to-[#8a4a34]",
   bloomrate: "from-[#d9b56a] via-[#8a6e2f] to-[#1a1712]",
+  legible: "from-[#b5245e] via-[#6a3a8f] to-[#2d55b0]",
   "sticker-sync": "from-[#5cb894] via-[#2f7a5c] to-[#0d1f18]",
   capicu: "from-[#4a6fa8] via-[#1f3a5c] to-[#0a1420]",
   battlepillars: "from-[#8ab35c] via-[#4e6b2e] to-[#151f0c]",
@@ -36,18 +37,23 @@ type ProjectVisualProps = {
   slug: string;
   name: string;
   image?: string;
+  imageFit?: "cover" | "contain";
 };
 
-export function ProjectVisual({ slug, name, image }: ProjectVisualProps) {
+export function ProjectVisual({ slug, name, image, imageFit = "cover" }: ProjectVisualProps) {
   if (image) {
     return (
-      <div className="relative h-full min-h-0 w-full overflow-hidden rounded-xl bg-surface-raised">
+      <div
+        className={`relative h-full min-h-0 w-full overflow-hidden rounded-xl ${
+          imageFit === "contain" ? "bg-white" : "bg-surface-raised"
+        }`}
+      >
         <Image
           src={image}
           alt={`${name} key art`}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-cover"
+          className={imageFit === "contain" ? "object-contain px-3" : "object-cover"}
         />
       </div>
     );
